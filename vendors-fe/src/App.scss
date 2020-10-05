@@ -42,8 +42,8 @@ $diffRatio: ($contW - $imgW) / $contW;
   overflow: hidden;
   position: relative;
   width: $contW;
-  height: 550px;
-  margin: 100px auto 100px;
+  height: 620px;
+  margin: 50px auto;
   background: #fff;
 }
 
@@ -163,7 +163,7 @@ button {
     position: relative;
     width: 100px;
     height: $btnH;
-    margin: 0 auto;
+    margin: 150px auto 0;
     background: transparent;
     color: #fff;
     text-transform: uppercase;
@@ -293,4 +293,11 @@ input {
     left: auto;
     right: 5px;
   }
+}
+
+/****** Error message******/
+.error {
+  color: darkred;
+  text-align: center;
+  
 }

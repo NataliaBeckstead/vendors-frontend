@@ -17,6 +17,90 @@ function SignIn() {
     password: ""
   });
 
+  const [errorsIn, setErrorsIn] = useState({
+    emailSignIn: "",
+    passwordSignIn: ""
+  });
+
+  const [errorsUp, setErrorsUp] = useState({
+    username: "",
+    broker: "",
+    email: "",
+    phone: "",
+    password: ""
+  });
+
+  const formSchemaIn = yup.object().shape({
+    emailSignIn: yup
+      .string()
+      .email("Must be a valid email")
+      .required("Must include an email"),
+    passwordSignIn: yup.string()
+        .required('Please create a password')
+        .matches(
+
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+        ),
+  });
+
+  const formSchemaUp = yup.object().shape({
+    username: yup.string().required("Name is a required field"),
+    broker: yup.string().required("Broker is a required field"),
+    email: yup
+      .string()
+      .email("Must be a valid email")
+      .required("Must include an email"),
+    phone: yup
+      .string()
+      .matches(/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/, 'Phone number is not valid')
+      .required("Must include a phone number"),
+    password: yup.string()
+        .required('Please create a password')
+        .matches(
+
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+        "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+        ),
+    terms: yup.boolean().oneOf([true], "Please agree to Terms & Conditions")
+  });
+
+  const validateChangeIn = (e) => {
+    yup
+      .reach(formSchemaIn, e.target.name)
+      .validate(e.target.value)
+      .then((valid) => {
+        setErrorsIn({
+          ...errorsIn,
+          [e.target.name]: ""
+        });
+      })
+      .catch((err) => {
+        setErrorsIn({
+          ...errorsIn,
+          [e.target.name]: err.errors[0]
+        });
+      });
+  };
+
+  const validateChangeUp = (e) => {
+    yup
+      .reach(formSchemaUp, e.target.name)
+      .validate(e.target.value)
+      .then((valid) => {
+        setErrorsUp({
+          ...errorsUp,
+          [e.target.name]: ""
+        });
+      })
+      .catch((err) => {
+        setErrorsUp({
+          ...errorsUp,
+          [e.target.name]: err.errors[0]
+        });
+      });
+  };
+
   const formChangeIn = (e) => {
     e.persist();
     const newInData = {
@@ -24,7 +108,7 @@ function SignIn() {
       [e.target.name]: e.target.value
     };
     
-    // validateChange(e); // for each change in input, do inline validation
+    validateChangeIn(e);
     setSignInFormState(newInData);
   };
 
@@ -34,8 +118,7 @@ function SignIn() {
       ...signUpFormState,
       [e.target.name]: e.target.value
     };
-
-    // validateChange(e); // for each change in input, do inline validation
+    validateChangeUp(e);
     setSignUpFormState(newUpData);
   };
 
@@ -47,9 +130,11 @@ function SignIn() {
           <label htmlFor="emailSignIn">email
             <input id="emailSignIn" name="emailSignIn" type="email" value={signInFormState.emailSignIn} onChange={formChangeIn} />
           </label>
+          {errorsIn.emailSignIn.length > 0 ? <p className="error">{errorsIn.emailSignIn}</p> : null}
           <label htmlFor="passwordSignIn">password
             <input id="passwordSignIn" name="passwordSignIn" type="password" value={signInFormState.passwordSignIn} onChange={formChangeIn} />
           </label>
+          {errorsIn.passwordSignIn.length > 0 ? <p className="error">{errorsIn.passwordSignIn}</p> : null}
           {/* TODO functionality for forgot password */}
           {/* <p className="forgot-pass">Forgot password?</p> */}
           <button type="button" className="submit">Sign In</button>
@@ -76,18 +161,23 @@ function SignIn() {
             <label htmlFor="username">username
               <input id="username" name="username" type="text" value={signUpFormState.username} onChange={formChangeUp} />
             </label>
+            {errorsUp.username.length > 0 ? <p className="error">{errorsUp.username}</p> : null}
             <label htmlFor="broker">broker
               <input id="broker" name="broker" type="text" value={signUpFormState.broker} onChange={formChangeUp} />
             </label>
+            {errorsUp.broker.length > 0 ? <p className="error">{errorsUp.broker}</p> : null}
             <label htmlFor="email">email
               <input id="email" name="email" type="email" value={signUpFormState.email} onChange={formChangeUp} />
             </label>
+            {errorsUp.email.length > 0 ? <p className="error">{errorsUp.email}</p> : null}
             <label htmlFor="phone">phone
               <input id="phone" name="phone" type="tel" value={signUpFormState.phone} onChange={formChangeUp} /> 
             </label>
+            {errorsUp.phone.length > 0 ? <p className="error">{errorsUp.phone}</p> : null}
             <label htmlFor="password">password
               <input id="password" name="password" type="password" value={signUpFormState.password} onChange={formChangeUp} />
             </label>
+            {errorsUp.password.length > 0 ? <p className="error">{errorsUp.password}</p> : null}
             <button type="button" className="submit">Sign Up</button>
           </form>
         </div>
