@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as yup from "yup";
 import axios from "axios";
 
@@ -40,7 +40,6 @@ function SignIn() {
     passwordSignIn: yup.string()
         .required('Please create a password')
         .matches(
-
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
         "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
         ),
@@ -60,7 +59,6 @@ function SignIn() {
     password: yup.string()
         .required('Please create a password')
         .matches(
-
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
         "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
         ),
@@ -127,6 +125,7 @@ function SignIn() {
   const formSubmitIn = (e) => {
     e.preventDefault();
     console.log("form submitted!");
+    // TODO: replace URL for mine backend, delete console.logs
     axios
       .post("https://reqres.in/api/users", signInFormState)
       .then((res) => {
@@ -145,6 +144,7 @@ function SignIn() {
   const formSubmitUp = (e) => {
     e.preventDefault();
     console.log("form submitted!");
+    // TODO: replace URL for mine backend, delete console.logs
     axios
       .post("https://reqres.in/api/users", signUpFormState)
       .then((res) => {
@@ -199,7 +199,7 @@ function SignIn() {
         </div>
         <div className="form sign-up">
           <h2>Create a new account</h2>
-          <form>
+          <form onSubmit={formSubmitUp}>
             {serverError ? <p className="error">{serverError}</p> : null}
             <label htmlFor="username">username
               <input id="username" name="username" type="text" value={signUpFormState.username} onChange={formChangeUp} />
