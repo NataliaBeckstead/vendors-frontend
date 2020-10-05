@@ -17,6 +17,8 @@ function SignIn() {
     password: ""
   });
 
+  const [serverError, setServerError] = useState("");
+
   const [errorsIn, setErrorsIn] = useState({
     emailSignIn: "",
     passwordSignIn: ""
@@ -122,11 +124,51 @@ function SignIn() {
     setSignUpFormState(newUpData);
   };
 
+  const formSubmitIn = (e) => {
+    e.preventDefault();
+    console.log("form submitted!");
+    axios
+      .post("https://reqres.in/api/users", signInFormState)
+      .then((res) => {
+        console.log("success!", res.data);
+        setServerError(null);
+        setSignInFormState({
+          emailSignIn: "",
+          passwordSignIn: ""
+        });
+      })
+      .catch((err) => {
+        setServerError("oops! something happened!");
+      });
+  };
+
+  const formSubmitUp = (e) => {
+    e.preventDefault();
+    console.log("form submitted!");
+    axios
+      .post("https://reqres.in/api/users", signUpFormState)
+      .then((res) => {
+        console.log("success!", res.data);
+        setServerError(null);
+        setSignUpFormState({
+          username: "",
+          broker: "",
+          email: "",
+          phone: "",
+          password: ""
+        });
+      })
+      .catch((err) => {
+        setServerError("oops! something happened!");
+      });
+  };
+
   return (
     <div className="cont">
       <div className="form sign-in">
         <h2>Welcome back</h2>
-        <form>
+        <form onSubmit={formSubmitIn}>
+          {serverError ? <p className="error">{serverError}</p> : null}
           <label htmlFor="emailSignIn">email
             <input id="emailSignIn" name="emailSignIn" type="email" value={signInFormState.emailSignIn} onChange={formChangeIn} />
           </label>
@@ -137,7 +179,7 @@ function SignIn() {
           {errorsIn.passwordSignIn.length > 0 ? <p className="error">{errorsIn.passwordSignIn}</p> : null}
           {/* TODO functionality for forgot password */}
           {/* <p className="forgot-pass">Forgot password?</p> */}
-          <button type="button" className="submit">Sign In</button>
+          <button type="submit" className="submit">Sign In</button>
         </form>
       </div>
       <div className="sub-cont">
@@ -158,6 +200,7 @@ function SignIn() {
         <div className="form sign-up">
           <h2>Create a new account</h2>
           <form>
+            {serverError ? <p className="error">{serverError}</p> : null}
             <label htmlFor="username">username
               <input id="username" name="username" type="text" value={signUpFormState.username} onChange={formChangeUp} />
             </label>
@@ -178,7 +221,7 @@ function SignIn() {
               <input id="password" name="password" type="password" value={signUpFormState.password} onChange={formChangeUp} />
             </label>
             {errorsUp.password.length > 0 ? <p className="error">{errorsUp.password}</p> : null}
-            <button type="button" className="submit">Sign Up</button>
+            <button type="submit" className="submit">Sign Up</button>
           </form>
         </div>
       </div>
