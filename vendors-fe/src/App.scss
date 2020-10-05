@@ -248,6 +248,10 @@ input {
   margin-bottom: 20px;
   background: #00597b;
   text-transform: uppercase;
+  &:disabled {
+    cursor: default;
+    background: #2b7fa0;
+  }
 }
 
 .fb-btn {
