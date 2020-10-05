@@ -43,7 +43,7 @@ $diffRatio: ($contW - $imgW) / $contW;
   position: relative;
   width: $contW;
   height: 550px;
-  margin: 0 auto 100px;
+  margin: 100px auto 100px;
   background: #fff;
 }
 
@@ -99,7 +99,7 @@ button {
     top: 0;
     width: $contW;
     height: 100%;
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg');
+    background-image: url('../src/images/login.jpg');
     background-size: cover;
     transition: transform $switchAT ease-in-out;
   }
@@ -246,7 +246,7 @@ input {
 .submit {
   margin-top: 40px;
   margin-bottom: 20px;
-  background: #d4af7a;
+  background: #00597b;
   text-transform: uppercase;
 }
 
