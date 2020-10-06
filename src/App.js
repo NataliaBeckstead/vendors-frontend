@@ -4,7 +4,16 @@ import {Route} from "react-router-dom";
 
 import LandingPage from './components/LandingPage';
 import SignIn from "./components/SignIn";
-import NewItemFrom from "./components/vendors/NewItemForm.js";
+import Dashboard from "./components/vendors/Dashboard";
+import Profile from "./components/vendors/Profile";
+import Submissions from "./components/vendors/Submissions";
+import SubmitItem from "./components/vendors/SubmitItem";
+import SubmitPromotion from "./components/vendors/SubmitPromotion";
+import AdminDashboard from "./components/admin/AdminDashboard";
+import ManageProfile from "./components/admin/ManageProfile";
+import ManagePromotions from "./components/admin/ManagePromotions";
+import ManageSubmissions from "./components/admin/ManageSubmissions";
+import ManageUsers from "./components/admin/ManageUsers";
 
 function App() {
   return (
@@ -21,45 +30,45 @@ function App() {
       {/* VENDOR'S ROUTS */}
 
       <Route path="/dashboard">
-        <SignIn />
+        <Dashboard />
       </Route>
 
       <Route path="/submit_item">
-        <SignIn />
+        <SubmitItem />
       </Route>
 
       <Route path="/submit_promotion">
-        <SignIn />
+        <SubmitPromotion />
       </Route>
 
       <Route path="/submissions">
-        <SignIn />
+        <Submissions />
       </Route>
 
       <Route path="/profile">
-        <SignIn />
+        <Profile />
       </Route>
 
       {/* ADMIN'S ROUTS */}
 
       <Route path="/admin_dashboard">
-        <SignIn />
+        <AdminDashboard />
       </Route>
 
       <Route path="/manage_submissions">
-        <SignIn />
+        <ManageSubmissions />
       </Route>
 
       <Route path="/manage_promotions">
-        <SignIn />
+        <ManagePromotions />
       </Route>
 
       <Route path="/manage_users">
-        <SignIn />
+        <ManageUsers />
       </Route>
 
       <Route path="/change_profile">
-        <SignIn />
+        <ManageProfile />
       </Route>
 
     </div>
