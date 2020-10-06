@@ -5,10 +5,10 @@ import logo from "../images/logo.png";
 function LandingPage() {
 
   return (
-    <div>
+    <div className="landing-container">
         <img src={logo} alt="Harmons logo" />
-        <p>Thank you for your interest in getting your product(s) considered to be authorized in our stores.</p>
-        <Link to={`/signin`}>Sign in</Link>
+        <p>Thank you for your interest in getting your product considered to be authorized in our stores.</p>
+        <Link className="link" to={`/signin`}><button  className="submit" >Sign in</button></Link>
     </div>
   )
 }

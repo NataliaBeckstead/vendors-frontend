@@ -124,21 +124,27 @@ button {
     z-index: 2;
     position: absolute;
     left: 0;
-    top: 50px;
+    top: 0px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 ;
     text-align: center;
     color: #fff;
     transition: transform $switchAT ease-in-out;
 
     h2 {
       margin-bottom: 10px;
+      margin-top: 20px;
       font-weight: normal;
     }
 
     p {
       font-size: 14px;
       line-height: 1.5;
+      padding: 0 20px;
+    }
+
+    .redlogo {
+      width: 100%;
     }
 
     &.m--up {
@@ -246,23 +252,14 @@ input {
 .submit {
   margin-top: 40px;
   margin-bottom: 20px;
-  background: #00597b;
+  background: #d54628;
   text-transform: uppercase;
   &:disabled {
     cursor: default;
-    background: #2b7fa0;
+    background: #fabaad;
   }
 }
 
-.fb-btn {
-  border: 2px solid #d3dae9;
-  color: darken(#d3dae9, 20%);
-
-  span {
-    font-weight: bold;
-    color: darken(#768cb6, 20%);
-  }
-}
 
 .sign-in {
   transition-timing-function: ease-out;
@@ -304,4 +301,26 @@ input {
   color: darkred;
   text-align: center;
   
+}
+
+/******** Landing page *********/
+.landing-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: $contW;
+  height: 620px;
+  margin: 50px auto;
+  background: #fff;
+
+  img {
+    margin-top: 70px;
+  }
+  p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .link {
+    text-decoration: none;
+  }
 }

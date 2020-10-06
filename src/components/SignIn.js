@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
+import logo from "../images/logo-red.png";
 
 function SignIn() {
 
@@ -195,10 +196,12 @@ function SignIn() {
       <div className="sub-cont">
         <div className="img">
           <div className="img__text m--up">
+            <img src={logo} alt="Harmons logo" className="redlogo"/>
             <h2>New here?</h2>
             <p>Sign up and discover great amount of new opportunities!</p>
           </div>
           <div className="img__text m--in">
+            <img src={logo} alt="Harmons logo" className="redlogo" />
             <h2>One of us?</h2>
             <p>If you already has an account, just sign in. We've missed you!</p>
           </div>
