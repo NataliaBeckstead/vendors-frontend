@@ -17,7 +17,7 @@ function Navbar() {
             <nav>
                 <ul>
                     <li>
-                        <p className="link" onClick={() => {setIsOpen(!isOpen)}}>Submissions</p>
+                        <p className="link" onClick={() => {setIsOpen(!isOpen)}}>Submissions {isOpen ? "▴" : "▾"}</p>
                         <ul className={isOpen ? "nav-open" : "nav-closed"}>
                             <li><Link className="link" to={`/review_submissions`}>Review new submissions</Link></li>
                             <li><Link className="link" to={`/see_all_submissions`}>See all submissions</Link></li>
