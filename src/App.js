@@ -11,7 +11,9 @@ import SubmitItem from "./components/vendors/SubmitItem";
 import SubmitPromotion from "./components/vendors/SubmitPromotion";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import ManageProfile from "./components/admin/ManageProfile";
-import ManagePromotions from "./components/admin/ManagePromotions";
+import ReviewPromotions from "./components/admin/ReviewPromotions";
+import DownloadPromotions from "./components/admin/DownloadPromotions";
+import SeeAllPromotions from "./components/admin/SeeAllPromotions";
 import ReviewSubmissions from "./components/admin/ReviewSubmissions";
 import DownloadSubmissions from "./components/admin/DownloadSubmissions";
 import SeeAllSubmissions from "./components/admin/SeeAllSubmissions";
@@ -70,8 +72,16 @@ function App() {
         <SeeAllSubmissions />
       </Route>
 
-      <Route path="/manage_promotions">
-        <ManagePromotions />
+      <Route path="/review_promotions">
+        <ReviewPromotions />
+      </Route>
+
+      <Route path="/download_promotions">
+        <DownloadPromotions />
+      </Route>
+
+      <Route path="/see_all_promotions">
+        <SeeAllPromotions />
       </Route>
 
       <Route path="/manage_users">

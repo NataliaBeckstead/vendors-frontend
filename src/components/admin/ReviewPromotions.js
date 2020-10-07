@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-function ManagePromotions() {
+function ReviewPromotions() {
 
   return (
     <div>
         <Navbar />
-        <p>Manage Promotions</p>
+        <p>Review Promotions</p>
     </div>
   )
   
 }
 
-export default ManagePromotions;
+export default ReviewPromotions;
