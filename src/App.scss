@@ -339,7 +339,7 @@ input {
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     .link {
@@ -380,6 +380,35 @@ input {
     li {
       margin-top: 10px;
       margin-bottom: 10px;
+    }
+  }
+}
+
+/*********** vendor dashboard ***********/
+
+.vendor-dashboard {
+  color: black;
+  h2 {
+    margin-top: 50px;
+  }
+  .options {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    .option {
+      background-color: #fff;
+      width: 40%;
+      height: 200px;
+      margin: 2% 2%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-size: 20px;
+      border-radius: 20px;
     }
   }
 }

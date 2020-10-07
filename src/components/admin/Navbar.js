@@ -13,7 +13,7 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <img src={logo} alt="Harmons logo" />
+            <Link to={`/admin_dashboard`}><img src={logo} alt="Harmons logo" /></Link>
             <nav>
                 <ul>
                     <li>

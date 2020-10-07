@@ -12,7 +12,7 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <img src={logo} alt="Harmons logo" />
+            <Link to={`/dashboard`}><img src={logo} alt="Harmons logo" /></Link>
             <nav>
                 <ul>
                     <li><Link className="link" to={`/submit_item`}>Submit item</Link></li>
