@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 function SubmitPromotion() {
 
   return (
-    <div className="cont">
+    <div>
+        <Navbar />
         <p>Submit Promotion</p>
     </div>
   )

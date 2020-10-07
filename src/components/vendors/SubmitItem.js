@@ -1,10 +1,12 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 function SubmitItem() {
 
   return (
-    <div className="cont">
-        <p>SubmitItem</p>
+    <div>
+        <Navbar />
+        <p>Submit Item</p>
     </div>
   )
   
