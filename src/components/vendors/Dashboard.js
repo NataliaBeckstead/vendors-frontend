@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Dashboard() {
 
   return (
-    <div className="vendor-dashboard">
+    <div className="dashboard">
         <Navbar />
         <h2>Welcome, username!</h2>
         <div className="options">
