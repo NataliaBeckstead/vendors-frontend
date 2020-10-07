@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 function ManageUsers() {
 
   return (
-    <div className="cont">
+    <div>
+        <Navbar />
         <p>Manage Users</p>
     </div>
   )

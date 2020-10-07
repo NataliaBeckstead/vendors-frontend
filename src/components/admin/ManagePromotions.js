@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 function ManagePromotions() {
 
   return (
-    <div className="cont">
+    <div>
+      <Navbar />
         <p>Manage Promotions</p>
     </div>
   )

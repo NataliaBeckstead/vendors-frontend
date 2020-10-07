@@ -14,10 +14,10 @@ function Navbar() {
         <div className="navbar">
             <img src={logo} alt="Harmons logo" />
             <div>
-                <Link className="link" to={`/submit_item`}>Submit item</Link>
-                <Link className="link" to={`/submit_promotion`}>Submit promotion</Link>
-                <Link className="link" to={`/submissions`}>See my submissions</Link>
-                <Link className="link" to={`/profile`}>Profile</Link>
+                <Link className="link" to={`/manage_submissions`}>Submissions</Link>
+                <Link className="link" to={`/manage_promotions`}>Promotions</Link>
+                <Link className="link" to={`/manage_users`}>Users</Link>
+                <Link className="link" to={`/change_profile`}>Profile</Link>
             </div>
             <button onClick={handSignOut}>Sign out</button>
         </div>
