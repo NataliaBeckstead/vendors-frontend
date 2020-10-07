@@ -298,7 +298,7 @@ input {
 
 /****** Error message******/
 .error {
-  color: darkred;
+  color: #d54628;
   text-align: center;
   
 }
@@ -334,15 +334,24 @@ input {
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  height: 70px;;
-  div {
+  height: 70px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     width: 70%;
     display: flex;
     justify-content: flex-start;
     .link {
       color: black;
       margin-left: 30px;
+      transition: 700ms;
+      cursor: pointer;
+      &:hover {
+        color:  #d54628;
+      }
     }
+    
   }
   img {
     width: 150px;
@@ -351,5 +360,26 @@ input {
   }
   button {
     color: black;
+    transition: 700ms;
+      &:hover {
+        color:  #d54628;
+      }
+  }
+  .nav-closed {
+    display: none;
+  }
+  .nav-open {
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    background-color: #fff;
+    margin-top: 25px;
+    li {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
 }

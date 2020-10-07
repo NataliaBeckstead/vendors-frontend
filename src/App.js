@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 import {Route} from "react-router-dom";
 
@@ -12,10 +12,13 @@ import SubmitPromotion from "./components/vendors/SubmitPromotion";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import ManageProfile from "./components/admin/ManageProfile";
 import ManagePromotions from "./components/admin/ManagePromotions";
-import ManageSubmissions from "./components/admin/ManageSubmissions";
+import ReviewSubmissions from "./components/admin/ReviewSubmissions";
+import DownloadSubmissions from "./components/admin/DownloadSubmissions";
+import SeeAllSubmissions from "./components/admin/SeeAllSubmissions";
 import ManageUsers from "./components/admin/ManageUsers";
 
 function App() {
+
   return (
     <div className="App">
 
@@ -55,8 +58,16 @@ function App() {
         <AdminDashboard />
       </Route>
 
-      <Route path="/manage_submissions">
-        <ManageSubmissions />
+      <Route path="/review_submissions">
+        <ReviewSubmissions />
+      </Route>
+
+      <Route path="/download_submissions">
+        <DownloadSubmissions />
+      </Route>
+
+      <Route path="/see_all_submissions">
+        <SeeAllSubmissions />
       </Route>
 
       <Route path="/manage_promotions">

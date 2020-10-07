@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-function ManageSubmissions() {
+function ReviewSubmissions() {
 
   return (
     <div>
         <Navbar />
-        <p>Manage Submittions</p>
+        <p>Review Submittions</p>
     </div>
   )
   
 }
 
-export default ManageSubmissions;
+export default ReviewSubmissions;

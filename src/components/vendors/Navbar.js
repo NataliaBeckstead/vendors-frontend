@@ -13,12 +13,14 @@ function Navbar() {
     return (
         <div className="navbar">
             <img src={logo} alt="Harmons logo" />
-            <div>
-                <Link className="link" to={`/submit_item`}>Submit item</Link>
-                <Link className="link" to={`/submit_promotion`}>Submit promotion</Link>
-                <Link className="link" to={`/submissions`}>See my submissions</Link>
-                <Link className="link" to={`/profile`}>Profile</Link>
-            </div>
+            <nav>
+                <ul>
+                    <li><Link className="link" to={`/submit_item`}>Submit item</Link></li>
+                    <li><Link className="link" to={`/submit_promotion`}>Submit promotion</Link></li>
+                    <li><Link className="link" to={`/submissions`}>See my submissions</Link></li>
+                    <li><Link className="link" to={`/profile`}>Profile</Link></li>
+                </ul>
+            </nav>
             <button onClick={handSignOut}>Sign out</button>
         </div>
     )
