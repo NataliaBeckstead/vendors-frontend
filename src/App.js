@@ -9,6 +9,7 @@ import Profile from "./components/vendors/Profile";
 import Submissions from "./components/vendors/Submissions";
 import SubmitItem from "./components/vendors/SubmitItem";
 import SubmitPromotion from "./components/vendors/SubmitPromotion";
+import MerchandiserMenu from "./components/vendors/MerchandiserMenu";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import ManageProfile from "./components/admin/ManageProfile";
 import ReviewPromotions from "./components/admin/ReviewPromotions";
@@ -44,6 +45,10 @@ function App() {
 
       <Route path="/submit_promotion">
         <SubmitPromotion />
+      </Route>
+
+      <Route path="/merchandising_menu">
+        <MerchandiserMenu />
       </Route>
 
       <Route path="/submissions">

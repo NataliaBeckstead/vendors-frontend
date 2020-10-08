@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import logo from "../../images/logo.png";
 
 function Navbar() {
 
     let history = useHistory();
+
+    const [promIsOpen, setPromIsOpen] = useState(false);
 
     function handSignOut() {
         history.push("/signin");
@@ -15,8 +17,14 @@ function Navbar() {
             <Link to={`/dashboard`}><img src={logo} alt="Harmons logo" /></Link>
             <nav>
                 <ul>
-                    <li><Link className="link" to={`/submit_item`}>Submit item</Link></li>
-                    <li><Link className="link" to={`/submit_promotion`}>Submit promotion</Link></li>
+                    <li><Link className="link" to={`/submit_item`}>Submit new item(s)</Link></li>
+                    <li>
+                        <p className="link" onClick={() => {setPromIsOpen(!promIsOpen); }}>Promotions {promIsOpen ? "▴" : "▾"}</p>
+                        <ul className={promIsOpen ? "nav-open" : "nav-closed"}>
+                            <li><Link className="link" to={`/submit_promotion`}>Submit promotion</Link></li>
+                            <li><Link className="link" to={`/merchandising_menu`}>Merchandising & display menu</Link></li>
+                        </ul>
+                    </li>
                     <li><Link className="link" to={`/submissions`}>See my submissions</Link></li>
                     <li><Link className="link" to={`/profile`}>Profile</Link></li>
                 </ul>
