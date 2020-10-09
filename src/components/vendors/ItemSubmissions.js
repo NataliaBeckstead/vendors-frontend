@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-function Submissions() {
+function ItemSubmissions() {
 
   return (
     <div>
         <Navbar />
-        <p>Submissions</p>
+        <p>Item Submissions</p>
     </div>
   )
   
 }
 
-export default Submissions;
+export default ItemSubmissions;

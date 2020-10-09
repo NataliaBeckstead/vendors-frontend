@@ -6,7 +6,8 @@ import LandingPage from './components/LandingPage';
 import SignIn from "./components/SignIn";
 import Dashboard from "./components/vendors/Dashboard";
 import Profile from "./components/vendors/Profile";
-import Submissions from "./components/vendors/Submissions";
+import ItemSubmissions from "./components/vendors/ItemSubmissions";
+import PromotionSubmissions from "./components/vendors/PromotionSubmissions";
 import SubmitItem from "./components/vendors/SubmitItem";
 import SubmitPromotion from "./components/vendors/SubmitPromotion";
 import MerchandiserMenu from "./components/vendors/MerchandiserMenu";
@@ -51,8 +52,12 @@ function App() {
         <MerchandiserMenu />
       </Route>
 
-      <Route path="/submissions">
-        <Submissions />
+      <Route path="/item_submissions">
+        <ItemSubmissions />
+      </Route>
+
+      <Route path="/promotion_submissions">
+        <PromotionSubmissions />
       </Route>
 
       <Route path="/profile">

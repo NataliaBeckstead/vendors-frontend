@@ -18,7 +18,7 @@ function Navbar() {
             <nav>
                 <ul>
                     <li>
-                        <p className="link" onClick={() => {setSubmIsOpen(!submIsOpen)}}>Submissions {submIsOpen ? "▴" : "▾"}</p>
+                        <p className="link" onClick={() => { setSubmIsOpen(!submIsOpen); setPromIsIsOpen(false); }}>Submissions {submIsOpen ? "▴" : "▾"}</p>
                         <ul className={submIsOpen ? "nav-open" : "nav-closed"}>
                             <li><Link className="link" to={`/review_submissions`}>Review new submissions</Link></li>
                             <li><Link className="link" to={`/see_all_submissions`}>See all submissions</Link></li>
@@ -26,7 +26,7 @@ function Navbar() {
                         </ul>
                     </li>
                     <li>
-                        <p className="link" onClick={() => {setPromIsIsOpen(!promIsOpen)}}>Promotions {promIsOpen ? "▴" : "▾"}</p>
+                        <p className="link" onClick={() => { setPromIsIsOpen(!promIsOpen); setSubmIsOpen(false); }}>Promotions {promIsOpen ? "▴" : "▾"}</p>
                         <ul className={promIsOpen ? "nav-open" : "nav-closed"}>
                             <li><Link className="link" to={`/review_promotions`}>Review new promotions</Link></li>
                             <li><Link className="link" to={`/see_all_promotions`}>See all promotions</Link></li>
