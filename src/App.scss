@@ -422,13 +422,41 @@ input {
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin: 0;
   margin-top: 15px;
+  padding: 0;
+  
   .pdf-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 600px;
+    .icon {
+      font-size: 20px;
+      color: rgb(59, 59, 59);
+      margin: 0 10px;
+    }
+    .anticon:active {
+      border: none;
+    }
+    .zoomout {
+      &:active{
+        border: none;
+      }
+    }
     button {
       color: black;
+      width: 30px;
+    }
+    .pdf-pages {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .page-nav-button {
+        width: 50px;
+        margin: 0 50px;
+      }
     }
   }
 }
