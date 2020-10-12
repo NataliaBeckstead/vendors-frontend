@@ -47,7 +47,7 @@ function MerchandiserMenu() {
               <p>Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}</p>
               <button className="page-nav-button" type="button" disabled={pageNumber >= numPages} onClick={nextPage} ><StepForwardOutlined className="icon" /></button>
             </div>
-            <button type="button" onClick={() => {if (size > 0.3) {setSize(size - 0.2)}}}  ><ZoomOutOutlined className="icon" /></button>
+            <button type="button" onClick={() => {if (size > 0.7) {setSize(size - 0.2)}}}  ><ZoomOutOutlined className="icon" /></button>
             <button type="button" onClick={() => {if (size < 2.5) {setSize(size + 0.2)}}}><ZoomInOutlined className="icon" /></button>
             <button type="button" ><a href={menuPDF} download="Grocery Merchandising MENU 10.7.20.pdf"><DownloadOutlined className="icon" /></a></button>
           </div>
@@ -59,10 +59,3 @@ function MerchandiserMenu() {
 }
 
 export default MerchandiserMenu
-
-// react-pdf documentation:
-// https://github.com/wojtekmaj/react-pdf
-
-// TODO:
-// add functionality to change size
-// add opportunity to download file
